@@ -46,7 +46,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# Ambire audit details
+# Ambire Wallet - Invitational audit details
 - Total Prize Pool: $35,000 USDC
   - HM awards: $15,810 USDC
   - QA awards: $1,860 USDC 
