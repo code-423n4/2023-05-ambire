@@ -100,6 +100,13 @@ The code is frozen for review on commit ad7d99b2b30b6d79959b6767da933bf01c58ade7
 
 There are tests in the `ambire-common` repo. You can find them in `contracts/tests/`.
 
+First, clone the repo recursively:
+```
+git clone https://github.com/code-423n4/2023-05-ambire --recursive
+cd 2023-05-ambire/ambire-common
+npm i
+```
+
 To test, run separately:
 ```
 npx hardhat node
