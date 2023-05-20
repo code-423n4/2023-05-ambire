@@ -34,9 +34,19 @@ We hope you're excited about finally seeing a usable and powerful smart contract
 
 All the contracts in `contracts/`, namely `AmbireAccount.sol`, `libs/SignatureValidator.sol`, `libs/Bytes.sol`, `AmbireAccountFactory.sol`, a total of 476 LoC.
 
+## Changes compared to last Code4rena audit contest
+
+Compared to the last [Code4rena audit contest](https://code4rena.com/reports/2021-10-ambire/), we made the following changes:
+* `Identity` renamed to `AmbireAccount`
+* `QuickAccManager` dropped
+* Recovery signatures introduced, which are equivalent to time timelocked recovery procedure that was previously in `QuickAccManager`
+* Added Schnorr signature type to `SignatureValidator`
+* Added Multisig signature type to `SignatureValidator`
+* Added `executeMultiple`
+
 ## Architecture
 
-Ambire is a smart contract wallet a.k.a account abstraction wallet. Each user is represented by a smart contract, which is a minimal proxy (EIP 1167) for `AmbireAccount.sol` ([example](https://polygonscan.com/address/0x7ce38c302924f4b84a2c3a158df7ca9a5b7d1e1e#code)) - we call "account". Many addresses can control each account - we call this "privileges" in the contract and "keys" in the UI.
+Ambire is a smart contract wallet a.k.a account abstraction wallet. Each user is represented by a smart contract, which is a minimal proxy (EIP 1167) for `AmbireAccount.sol` ([example](https://etherscan.io/address/0xa07D75aacEFd11b425AF7181958F0F85c312f143#code)) - we call "account". Many addresses can control each account - we call this "privileges" in the contract and "keys" in the UI.
 
 The main contract everything is centered around is `AmbireAccount.sol`, which is the actual smart wallet.
 
@@ -74,7 +84,7 @@ The contracts are free of inheritance and external dependencies.
 
 There is no code upgradability and no ownership (`onlyOwner`) or pausability, to ensure immutability. For easier readability, there are no modifiers, while keeping the code DRY.
 
-Storage usage is cut down to the minimum: when bigger data structures need to be saved, we take advantage of the cheap calldata and always pass them in, verifying the hash against a storage slot in the process, for example `QuickAccManager` uses this for quick accounts.
+Storage usage is cut down to the minimum: when bigger data structures need to be saved, we take advantage of the cheap calldata and always pass them in, verifying the hash against a storage slot in the process.
 
 ## Smart contract summary
 
@@ -88,14 +98,14 @@ There's a few methods that can only be called by the AmbireAccount itself, which
 It's only dependency is an internal one, `SignatureValidator`.
 
 ### SignatureValidator.sol
-Validates signatures in a few modes: EIP-712, EthSign, SmartWallet and Spoof. The first two verify signed messages using `ecrecover`, the only difference being that EthSign expects the "Ethereum signed message:" prefix. SmartWallet is for ERC-1271 signatures (smart contract signatures), and Spoof is for spoofed signatures that only work when `tx.origin == address(1)`.
+Validates signatures in a few modes: EIP-712, EthSign, SmartWallet, Multisig, Schnoor and Spoof. The first two verify signed messages using `ecrecover`, the only difference being that EthSign expects the "Ethereum signed message:" prefix. SmartWallet is for ERC-1271 signatures (smart contract signatures), and Spoof is for spoofed signatures that only work when `tx.origin == address(1)`.
 
 ### AmbireAccountFactory.sol
 A simple CREATE2 factory contract designed to deploy minimal proxies for users. The most notable point here is `deploySafe`, which is a method that protects us from griefing conditions: `CREATE2` will fail if a contract has already been deployed, and this method essentially ensures a contract is deployed without failing if it already is.
 
 The use case of this is counterfactual deployment: the proxy of each account will be deployed when the first user bundle is executed, but we don't want to fail the whole bundle in case the contract has already been deployed.
 
-There is a method to drain the contract of ERC-20 tokens.
+There is a method allowing the original deployer to execute arbitrary calls from this contract - this is absolutely safe, as the contract is merely a factory, and allows recovering stuck funds or airdrops from it.
 
 
 ## Known tradeoffs
