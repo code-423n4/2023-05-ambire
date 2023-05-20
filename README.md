@@ -116,7 +116,7 @@ And then:
 
 ```
 npx hardhat compile
-npm test
+npx jest contracts/ --runInBand
 ```
 
 There's one additional part that is not yet added to the repo, and this is the **deploy mechanism implemented [here in IdentityProxyDeploy](https://github.com/AmbireTech/adex-protocol-eth/blob/master/js/IdentityProxyDeploy.js)**. Instead of deploying the whole `AmbireAccount` contract every time, we use minimal proxies. This is pretty standard, but most smart contract wallets use an `initialize()` function that can only be called once to set the privileges of the contract, because minimal proxies normally don't have constructors. Instead of this approach, which is quite unsafe, we use `IdentityProxyDeploy`, which generates deploy bytecode which directly does SSTORE in the correct storage slots to set the privileges for the relevant keys.
