@@ -1,0 +1,3 @@
+[submodule "ambire-common"]
+	path = ambire-common
+	url = https://github.com/AmbireTech/ambire-common
