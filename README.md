@@ -42,9 +42,18 @@ Good luck and enjoy hunting! 🐛🚫
 
 We hope you're excited about finally seeing a usable and powerful smart contract wallet on Ethereum!
 
-## Contest scope
+## Scope
+### Files in scope
+|File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|
+|:-|:-:|
+|_Contracts (2)_|
+|[ambire-common/contracts/AmbireAccountFactory.sol](https://github.com/code-423n4/2023-05-ambire/blob/main/ambire-common/contracts/AmbireAccountFactory.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🌀](#nowhere "create/create2")|[45](#nowhere "(nSLOC:40, SLOC:45, Lines:65)")|
+|[ambire-common/contracts/AmbireAccount.sol](https://github.com/code-423n4/2023-05-ambire/blob/main/ambire-common/contracts/AmbireAccount.sol) [🖥](#nowhere "Uses Assembly") [💰](#nowhere "Payable Functions") [👥](#nowhere "DelegateCall") [🧮](#nowhere "Uses Hash-Functions")|[182](#nowhere "(nSLOC:175, SLOC:182, Lines:257)")|
+|_Libraries (2)_|
+|[ambire-common/contracts/libs/Bytes.sol](https://github.com/code-423n4/2023-05-ambire/blob/main/ambire-common/contracts/libs/Bytes.sol) [🖥](#nowhere "Uses Assembly")|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:34)")|
+|[ambire-common/contracts/libs/SignatureValidator.sol](https://github.com/code-423n4/2023-05-ambire/blob/main/ambire-common/contracts/libs/SignatureValidator.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover") [Σ](#nowhere "Unchecked Blocks")|[85](#nowhere "(nSLOC:85, SLOC:85, Lines:119)")|
+|Total (over 4 files):| [329](#nowhere "(nSLOC:317, SLOC:329, Lines:475)")|
 
-All the contracts in `contracts/`, namely `AmbireAccount.sol`, `libs/SignatureValidator.sol`, `libs/Bytes.sol`, `AmbireAccountFactory.sol`, a total of 476 LoC.
 
 ## Changes compared to last Code4rena audit contest
 
