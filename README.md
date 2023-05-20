@@ -1,10 +1,16 @@
-# Ambire contest details
-- $32,000 USDC main award pot
+# Ambire Wallet - Invitational audit details
+- Total Prize Pool: $32,600 USDC
+  - HM awards: $15,810 USDC
+  - QA awards: $1,860 USDC 
+  - Gas awards: $930 USDC 
+  - Judge awards: $7,000 USDC 
+  - Scout awards: $500 USDC 
+  - Mitigation Review: $6,500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code423n4.com/2023-05-Ambire-contest/submit)
+- Submit findings [using the C4 form](https://code423n4.com/2023-05-Ambire-Wallet-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts May 22, 2023 20:00 UTC
-- Ends May 25, 2023 20:00 UTC
+- Starts May 23, 2023 20:00 UTC
+- Ends May 26, 2023 20:00 UTC
 - The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts)
 
 # 🔥 Ambire Wallet 🔥
