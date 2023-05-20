@@ -13,6 +13,12 @@
 - Ends May 26, 2023 20:00 UTC
 - The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts)
 
+## Automated Findings / Publicly Known Issues
+
+Automated findings output for the audit can be found [here](add link to report) within 24 hours of audit opening.
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
 # 🔥 Ambire Wallet 🔥
 
 _The Web3 wallet that makes crypto self-custody easy and secure for everyone, built via account abstraction._
@@ -134,6 +140,30 @@ There is a method allowing the original deployer to execute arbitrary calls from
 ## Networks
 
 The contracts will be deployed on Ethereum, Polygon, Fantom, BSC, Avalanche, Arbitrum, Optimism and other popular EVM chains.
+
+## Scoping Details 
+```
+- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/e4a739d6f3e9ae15928f49cf60258d21abce5f92/contracts
+- How many contracts are in scope?:   5
+- Total SLoC for these contracts?:  500
+- How many external imports are there?: 0 
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  6
+- Does most of your code generally use composition or inheritance?:   Composition
+- How many external calls?:   999999
+- What is the overall line coverage percentage provided by your tests?:  80
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  
+- Please describe required context:   
+- Does it use an oracle?:  false
+- Does the token conform to the ERC20 standard?: 
+- Are there any novel or unique curve logic or mathematical models?: N/A
+- Does it use a timelock function?:  true
+- Is it an NFT?: false
+- Does it have an AMM?:   false
+- Is it a fork of a popular project?:   
+- Does it use rollups?:   false
+- Is it multi-chain?:  true
+- Does it use a side-chain?: false
+```
 
 # Final notes
 
