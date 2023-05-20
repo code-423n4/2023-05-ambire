@@ -82,13 +82,26 @@ Because user bundles are authorized as signed messages, there's no need for hard
 
 Similar products include Argent, Safe and Sequence. The most notable differences is that the Ambire contracts are designed to be as simple as possible.
 
+
 ### Testing and JS libs
 
 The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts.
 
 The code is frozen for review on commit ad7d99b2b30b6d79959b6767da933bf01c58ade7 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts).
 
-There are tests that you can run via `npm test` in the `ambire-common` repo. You can find them in `contracts/tests/`.
+There are tests in the `ambire-common` repo. You can find them in `contracts/tests/`.
+
+To test, run separately:
+```
+npx hardhat node
+```
+
+And then:
+
+```
+npx hardhat compile
+npm test
+```
 
 There's one additional part that is not yet added to the repo, and this is the **deploy mechanism implemented [here in IdentityProxyDeploy](https://github.com/AmbireTech/adex-protocol-eth/blob/master/js/IdentityProxyDeploy.js)**. Instead of deploying the whole `AmbireAccount` contract every time, we use minimal proxies. This is pretty standard, but most smart contract wallets use an `initialize()` function that can only be called once to set the privileges of the contract, because minimal proxies normally don't have constructors. Instead of this approach, which is quite unsafe, we use `IdentityProxyDeploy`, which generates deploy bytecode which directly does SSTORE in the correct storage slots to set the privileges for the relevant keys.
 
