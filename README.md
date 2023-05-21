@@ -11,7 +11,7 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts May 23, 2023 20:00 UTC
 - Ends May 26, 2023 20:00 UTC
-- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts)
+- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts)
 
 ## Automated Findings / Publicly Known Issues
 
@@ -94,9 +94,9 @@ Similar products include Argent, Safe and Sequence. The most notable differences
 
 ### Testing and JS libs
 
-The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts.
+The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts.
 
-The code is frozen for review on commit ad7d99b2b30b6d79959b6767da933bf01c58ade7 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts).
+The code is frozen for review on commit a004628cac19ce45a05b655b00f1c83d2c2371f0 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts).
 
 There are tests in the `ambire-common` repo. You can find them in `contracts/tests/`.
 
@@ -148,7 +148,7 @@ Storage usage is cut down to the minimum: when bigger data structures need to be
 
 ## Smart contract summary
 
-Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/ad7d99b2b30b6d79959b6767da933bf01c58ade7/contracts) is in scope, including the libraries.
+Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts) is in scope, including the libraries.
 
 ### AmbireAccount.sol
 The core of the Ambire smart wallet. Each user is a minimal proxy with this contract as a base. It contains very few methods, with the most notable being:
@@ -189,7 +189,7 @@ The contracts will be deployed on Ethereum, Polygon, Fantom, BSC, Avalanche, Arb
 
 ## Scoping Details 
 ```
-- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/e4a739d6f3e9ae15928f49cf60258d21abce5f92/contracts
+- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts
 - How many contracts are in scope?:   5
 - Total SLoC for these contracts?:  500
 - How many external imports are there?: 0 
