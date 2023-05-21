@@ -119,6 +119,22 @@ npx hardhat compile
 npx jest contracts/ --runInBand
 ```
 
+Output should look like this:
+```
+$ npx jest contracts/ --runInBand
+ PASS  contracts/tests/AmbireAccount/Basic.test.ts (32.617 s)
+ PASS  contracts/tests/AmbireAccount/Recovery.test.ts (68.449 s)
+ PASS  contracts/tests/AmbireAccountFactory/Deploy.test.ts (18.026 s)
+ PASS  contracts/tests/AmbireAccount/MultiSig.test.ts (9.539 s)
+ PASS  contracts/tests/AmbireAccount/Schnorr.test.ts (5.235 s)
+ PASS  contracts/tests/AmbireAccount/721and1155.test.ts
+
+Test Suites: 6 passed, 6 total
+Tests:       45 passed, 45 total
+Snapshots:   0 total
+Time:        138.851 s, estimated 176 s
+```
+
 There's one additional part that is not yet added to the repo, and this is the **deploy mechanism implemented [here in IdentityProxyDeploy](https://github.com/AmbireTech/adex-protocol-eth/blob/master/js/IdentityProxyDeploy.js)**. Instead of deploying the whole `AmbireAccount` contract every time, we use minimal proxies. This is pretty standard, but most smart contract wallets use an `initialize()` function that can only be called once to set the privileges of the contract, because minimal proxies normally don't have constructors. Instead of this approach, which is quite unsafe, we use `IdentityProxyDeploy`, which generates deploy bytecode which directly does SSTORE in the correct storage slots to set the privileges for the relevant keys.
 
 You can test Ambire itself at [wallet.ambire.com](https://www.ambire.com), where it uses an older version of the contracts - one that was audited before through a [Code4rena contest](https://code4rena.com/reports/2021-10-ambire).
