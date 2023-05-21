@@ -11,7 +11,7 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts May 23, 2023 20:00 UTC
 - Ends May 26, 2023 20:00 UTC
-- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts)
+- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts)
 
 ## Automated Findings / Publicly Known Issues
 
@@ -47,11 +47,11 @@ We hope you're excited about finally seeing a usable and powerful smart contract
 |File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|
 |:-|:-:|
 |_Contracts (2)_|
-|[ambire-common/contracts/AmbireAccountFactory.sol](https://github.com/code-423n4/2023-05-ambire/blob/a004628cac19ce45a05b655b00f1c83d2c2371f0/ambire-common/contracts/AmbireAccountFactory.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🌀](#nowhere "create/create2")|[45](#nowhere "(nSLOC:40, SLOC:45, Lines:65)")|
-|[ambire-common/contracts/AmbireAccount.sol](https://github.com/code-423n4/2023-05-ambire/blob/a004628cac19ce45a05b655b00f1c83d2c2371f0/ambire-common/contracts/AmbireAccount.sol) [🖥](#nowhere "Uses Assembly") [💰](#nowhere "Payable Functions") [👥](#nowhere "DelegateCall") [🧮](#nowhere "Uses Hash-Functions")|[182](#nowhere "(nSLOC:175, SLOC:182, Lines:257)")|
+|[ambire-common/contracts/AmbireAccountFactory.sol](https://github.com/code-423n4/2023-05-ambire/blob/1580ea6ed0475e368c1ec7813727e41482de4826/ambire-common/contracts/AmbireAccountFactory.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🌀](#nowhere "create/create2")|[45](#nowhere "(nSLOC:40, SLOC:45, Lines:65)")|
+|[ambire-common/contracts/AmbireAccount.sol](https://github.com/code-423n4/2023-05-ambire/blob/1580ea6ed0475e368c1ec7813727e41482de4826/ambire-common/contracts/AmbireAccount.sol) [🖥](#nowhere "Uses Assembly") [💰](#nowhere "Payable Functions") [👥](#nowhere "DelegateCall") [🧮](#nowhere "Uses Hash-Functions")|[182](#nowhere "(nSLOC:175, SLOC:182, Lines:257)")|
 |_Libraries (2)_|
-|[ambire-common/contracts/libs/Bytes.sol](https://github.com/code-423n4/2023-05-ambire/blob/a004628cac19ce45a05b655b00f1c83d2c2371f0/ambire-common/contracts/libs/Bytes.sol) [🖥](#nowhere "Uses Assembly")|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:34)")|
-|[ambire-common/contracts/libs/SignatureValidator.sol](https://github.com/code-423n4/2023-05-ambire/blob/a004628cac19ce45a05b655b00f1c83d2c2371f0/ambire-common/contracts/libs/SignatureValidator.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover") [Σ](#nowhere "Unchecked Blocks")|[85](#nowhere "(nSLOC:85, SLOC:85, Lines:119)")|
+|[ambire-common/contracts/libs/Bytes.sol](https://github.com/code-423n4/2023-05-ambire/blob/1580ea6ed0475e368c1ec7813727e41482de4826/ambire-common/contracts/libs/Bytes.sol) [🖥](#nowhere "Uses Assembly")|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:34)")|
+|[ambire-common/contracts/libs/SignatureValidator.sol](https://github.com/code-423n4/2023-05-ambire/blob/1580ea6ed0475e368c1ec7813727e41482de4826/ambire-common/contracts/libs/SignatureValidator.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover") [Σ](#nowhere "Unchecked Blocks")|[85](#nowhere "(nSLOC:85, SLOC:85, Lines:119)")|
 |Total (over 4 files):| [329](#nowhere "(nSLOC:317, SLOC:329, Lines:475)")|
 
 
@@ -94,9 +94,9 @@ Similar products include Argent, Safe and Sequence. The most notable differences
 
 ### Testing and JS libs
 
-The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts.
+The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts.
 
-The code is frozen for review on commit a004628cac19ce45a05b655b00f1c83d2c2371f0 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts).
+The code is frozen for review on commit 1580ea6ed0475e368c1ec7813727e41482de4826 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts).
 
 There are tests in the `ambire-common` repo. You can find them in `contracts/tests/`.
 
@@ -148,7 +148,7 @@ Storage usage is cut down to the minimum: when bigger data structures need to be
 
 ## Smart contract summary
 
-Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts) is in scope, including the libraries.
+Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts) is in scope, including the libraries.
 
 ### AmbireAccount.sol
 The core of the Ambire smart wallet. Each user is a minimal proxy with this contract as a base. It contains very few methods, with the most notable being:
@@ -189,7 +189,7 @@ The contracts will be deployed on Ethereum, Polygon, Fantom, BSC, Avalanche, Arb
 
 ## Scoping Details 
 ```
-- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/a004628cac19ce45a05b655b00f1c83d2c2371f0/contracts
+- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts
 - How many contracts are in scope?:   5
 - Total SLoC for these contracts?:  500
 - How many external imports are there?: 0 
