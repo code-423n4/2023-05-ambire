@@ -70,7 +70,7 @@ The [production version](https://wallet.ambire.com) of Ambire still runs the con
 
 ## Architecture
 
-Ambire is a smart contract wallet a.k.a account abstraction wallet. Each user is represented by a smart contract, which is a minimal proxy (EIP-167) for `AmbireAccount.sol` ([example](https://etherscan.io/address/0xa07D75aacEFd11b425AF7181958F0F85c312f143#code)) - we call "account". Many addresses can control each account - we call this "privileges" in the contract and "keys" in the UI.
+Ambire is a smart contract wallet a.k.a account abstraction wallet. Each user is represented by a smart contract, which is a minimal proxy (EIP-1167) for `AmbireAccount.sol` ([example](https://etherscan.io/address/0xa07D75aacEFd11b425AF7181958F0F85c312f143#code)) - we call "account". Many addresses can control each account - we call this "privileges" in the contract and "keys" in the UI.
 
 The main contract everything is centered around is `AmbireAccount.sol`, which is the actual smart wallet.
 
