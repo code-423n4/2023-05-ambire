@@ -11,7 +11,7 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts May 23, 2023 20:00 UTC
 - Ends May 26, 2023 20:00 UTC
-- 🚨 The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/913a3bbd4cebb3c963c1f543c380199380756a29/contracts)
+- 🔥 The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/913a3bbd4cebb3c963c1f543c380199380756a29/contracts)
 
 ## Automated Findings / Publicly Known Issues
 
