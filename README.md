@@ -11,7 +11,7 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts May 23, 2023 20:00 UTC
 - Ends May 26, 2023 20:00 UTC
-- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts)
+- The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts)
 
 ## Automated Findings / Publicly Known Issues
 
@@ -47,11 +47,11 @@ We hope you're excited about finally seeing a usable and powerful smart contract
 |File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|
 |:-|:-:|
 |_Contracts (2)_|
-|[ambire-common/contracts/AmbireAccountFactory.sol](https://github.com/AmbireTech/ambire-common/blob/1580ea6ed0475e368c1ec7813727e41482de4826/contracts/AmbireAccountFactory.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🌀](#nowhere "create/create2")|[45](#nowhere "(nSLOC:40, SLOC:45, Lines:65)")|
-|[ambire-common/contracts/AmbireAccount.sol](https://github.com/AmbireTech/ambire-common/blob/1580ea6ed0475e368c1ec7813727e41482de4826/contracts/AmbireAccount.sol) [🖥](#nowhere "Uses Assembly") [💰](#nowhere "Payable Functions") [👥](#nowhere "DelegateCall") [🧮](#nowhere "Uses Hash-Functions")|[182](#nowhere "(nSLOC:175, SLOC:182, Lines:257)")|
+|[ambire-common/contracts/AmbireAccountFactory.sol](https://github.com/AmbireTech/ambire-common/blob/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts/AmbireAccountFactory.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🌀](#nowhere "create/create2")|[45](#nowhere "(nSLOC:40, SLOC:45, Lines:65)")|
+|[ambire-common/contracts/AmbireAccount.sol](https://github.com/AmbireTech/ambire-common/blob/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts/AmbireAccount.sol) [🖥](#nowhere "Uses Assembly") [💰](#nowhere "Payable Functions") [👥](#nowhere "DelegateCall") [🧮](#nowhere "Uses Hash-Functions")|[182](#nowhere "(nSLOC:175, SLOC:182, Lines:257)")|
 |_Libraries (2)_|
-|[ambire-common/contracts/libs/Bytes.sol](https://github.com/AmbireTech/ambire-common/blob/1580ea6ed0475e368c1ec7813727e41482de4826/contracts/libs/Bytes.sol) [🖥](#nowhere "Uses Assembly")|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:34)")|
-|[ambire-common/contracts/libs/SignatureValidator.sol](https://github.com/AmbireTech/ambire-common/blob/1580ea6ed0475e368c1ec7813727e41482de4826/contracts/libs/SignatureValidator.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover") [Σ](#nowhere "Unchecked Blocks")|[85](#nowhere "(nSLOC:85, SLOC:85, Lines:119)")|
+|[ambire-common/contracts/libs/Bytes.sol](https://github.com/AmbireTech/ambire-common/blob/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts/libs/Bytes.sol) [🖥](#nowhere "Uses Assembly")|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:34)")|
+|[ambire-common/contracts/libs/SignatureValidator.sol](https://github.com/AmbireTech/ambire-common/blob/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts/libs/SignatureValidator.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover") [Σ](#nowhere "Unchecked Blocks")|[85](#nowhere "(nSLOC:85, SLOC:85, Lines:119)")|
 |Total (over 4 files):| [329](#nowhere "(nSLOC:317, SLOC:329, Lines:475)")|
 
 
@@ -94,11 +94,11 @@ Similar products include Argent, Safe and Sequence. The most notable differences
 
 ### Testing and JS libs
 
-The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts.
+The contracts in scope can also be found in this repo: https://github.com/AmbireTech/ambire-common/tree/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts.
 
-The code is frozen for review on commit 1580ea6ed0475e368c1ec7813727e41482de4826 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts).
+The code is frozen for review on commit 4b7c2927da9f3f8fac1b900ba17d6cede430aaf8 in the repo [ambire-common](https://github.com/AmbireTech/ambire-common/tree/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts).
 
-There are tests in the `ambire-common` repo. You can find them in `contracts/tests/`.
+There are tests in the `ambire-common` repo. You can find them in `./test`.
 
 First, clone the repo recursively:
 ```
@@ -115,24 +115,59 @@ npx hardhat node
 And then:
 
 ```
-npx hardhat compile
-npx jest contracts/ --runInBand
+npm run test
 ```
 
 Output should look like this:
 ```
-$ npx jest contracts/ --runInBand
- PASS  contracts/tests/AmbireAccount/Basic.test.ts (32.617 s)
- PASS  contracts/tests/AmbireAccount/Recovery.test.ts (68.449 s)
- PASS  contracts/tests/AmbireAccountFactory/Deploy.test.ts (18.026 s)
- PASS  contracts/tests/AmbireAccount/MultiSig.test.ts (9.539 s)
- PASS  contracts/tests/AmbireAccount/Schnorr.test.ts (5.235 s)
- PASS  contracts/tests/AmbireAccount/721and1155.test.ts
+$ npm run test
+npx hardhat compile; npx hardhat test; jest
+NFT 721 and 1155 tests original contract tests
+    ✓ successfully deploys the ambire account (1936512 gas)
+    ✓ should call onERC721Received and return its signature (1723363 gas)
+    ✓ should call onERC1155Received and return its signature (1723363 gas)
+    ✓ should call onERC1155BatchReceived and return its signature (1723363 gas)
+
+Basic Ambire Account tests
+    ✓ successfully deploys the ambire account (3446726 gas)
+    ✓ ONLY_IDENTITY_CAN_CALL on setAddrPrivilege (1723363 gas)
+    ...
+...
+·---------------------------------------------|---------------------------|--------------|----------------------------·
+|            Solc version: 0.8.20             ·  Optimizer enabled: true  ·  Runs: 1000  ·  Block limit: 6718946 gas  │
+··············································|···························|··············|·····························
+|  Methods                                    ·               30 gwei/gas                ·      1815.47 usd/eth       │
+·························|····················|·············|·············|··············|··············|··············
+|  Contract              ·  Method            ·  Min        ·  Max        ·  Avg         ·  # calls     ·  usd (avg)  │
+·························|····················|·············|·············|··············|··············|··············
+|  AmbireAccount         ·  execute           ·      43802  ·      83728  ·       69218  ·          18  ·       3.77  │
+·························|····················|·············|·············|··············|··············|··············
+|  AmbireAccount         ·  executeBySender   ·      29365  ·      51637  ·       42496  ·          13  ·       2.31  │
+·························|····················|·············|·············|··············|··············|··············
+|  AmbireAccount         ·  executeMultiple   ·      88839  ·     109869  ·       99354  ·           4  ·       5.41  │
+·························|····················|·············|·············|··············|··············|··············
+|  AmbireAccountFactory  ·  deploy            ·     151214  ·    1733861  ·      678763  ·           3  ·      36.97  │
+·························|····················|·············|·············|··············|··············|··············
+|  AmbireAccountFactory  ·  deployAndExecute  ·     213137  ·    1793788  ·     1003466  ·           4  ·      54.65  │
+·························|····················|·············|·············|··············|··············|··············
+|  Deployments                                ·                                          ·  % of limit  ·             │
+··············································|·············|·············|··············|··············|··············
+|  AmbireAccount                              ·          -  ·          -  ·     1723363  ·      25.6 %  ·      93.86  │
+··············································|·············|·············|··············|··············|··············
+|  AmbireAccountFactory                       ·          -  ·          -  ·      471341  ·         7 %  ·      25.67  │
+·---------------------------------------------|-------------|-------------|--------------|--------------|-------------·
+
+ PASS  v2/libs/gasPrice/tests/non1559Network.test.ts
+ PASS  v2/libs/gasPrice/tests/1559Network.test.ts
+ PASS  v2/libs/portfolio/portfolio.test.ts (5.963 s)
+ PASS  v2/libs/deployless/compile.test.ts (7.218 s)
+ PASS  v2/libs/keystore/keystore.test.ts (8.041 s)
+ PASS  v2/libs/deployless/deployless.test.ts (11.617 s)
 
 Test Suites: 6 passed, 6 total
-Tests:       45 passed, 45 total
+Tests:       38 passed, 38 total
 Snapshots:   0 total
-Time:        138.851 s, estimated 176 s
+Time:        11.846 s, estimated 12 s
 ```
 
 There's one additional part that is not yet added to the repo, and this is the **deploy mechanism implemented [here in IdentityProxyDeploy](https://github.com/AmbireTech/adex-protocol-eth/blob/master/js/IdentityProxyDeploy.js)**. Instead of deploying the whole `AmbireAccount` contract every time, we use minimal proxies. This is pretty standard, but most smart contract wallets use an `initialize()` function that can only be called once to set the privileges of the contract, because minimal proxies normally don't have constructors. Instead of this approach, which is quite unsafe, we use `IdentityProxyDeploy`, which generates deploy bytecode which directly does SSTORE in the correct storage slots to set the privileges for the relevant keys.
@@ -148,7 +183,7 @@ Storage usage is cut down to the minimum: when bigger data structures need to be
 
 ## Smart contract summary
 
-Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts) is in scope, including the libraries.
+Every contract in [here](https://github.com/AmbireTech/ambire-common/tree/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts) is in scope, including the libraries.
 
 ### AmbireAccount.sol
 The core of the Ambire smart wallet. Each user is a minimal proxy with this contract as a base. It contains very few methods, with the most notable being:
@@ -189,7 +224,7 @@ The contracts will be deployed on Ethereum, Polygon, Fantom, BSC, Avalanche, Arb
 
 ## Scoping Details 
 ```
-- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/1580ea6ed0475e368c1ec7813727e41482de4826/contracts
+- If you have a public code repo, please share it here:  https://github.com/AmbireTech/ambire-common/tree/4b7c2927da9f3f8fac1b900ba17d6cede430aaf8/contracts
 - How many contracts are in scope?:   5
 - Total SLoC for these contracts?:  500
 - How many external imports are there?: 0 
