@@ -14,7 +14,7 @@
 - 🔥 The Ambire Wallet [contracts to be audited](https://github.com/AmbireTech/ambire-common/tree/5c54f8005e90ad481df8e34e85718f3d2bfa2ace/contracts) 🔥
 ## Automated Findings / Publicly Known Issues
 
-Automated findings output for the audit can be found [here](add link to report) within 24 hours of audit opening.
+Automated findings output for the audit can be found [here](https://gist.github.com/carlitox477/c5a24b70f2ea5ab3bd9ccfb9d93aaa38) within 24 hours of audit opening.
 
 *Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
 
